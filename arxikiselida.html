@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudentFoods</title>
+    <link rel="stylesheet" href="bodyselida.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="logo.jpg" alt="SF Logo" width="100" height="85">
+            <h1>StudentFoods</h1>
+        </div>
+        <div id="user-actions">
+            <button id="login-button">Login</button>
+            <div id="login-form-section" style="display: none;">
+                <form id="login-form">
+                    <input type="text" id="username" name="username" placeholder="Username" required>
+                    <input type="password" id="password" name="password" placeholder="Password" required>
+                    <button type="submit">Login</button>
+                </form>
+            </div>
+            <div id="logout-container" style="display: none;">
+                <button id="logout-button">Logout ⬇️</button>
+                <div id="logout-box" class="dropdown-content">
+                    <p>Αποσύνδεση</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <nav class="nav2">
+        <ul>
+            <li><a href="recipes.html">Recipes</a></li>
+            <li><a href="#">Famous</a></li>
+            <li><a href="#">Healthy</a></li>
+            <li><a href="#">Favorite</a></li>
+            <li><a href="#">Week Plan</a></li>
+        </ul>
+        <h2>Προσθήκη Συνταγής</h2>
+        <form action="add_recipe.php" method="post">
+           <label>Τίτλος Συνταγής:</label><br>
+        <input type="text" name="title" required><br>
+
+        <label>Υλικά:</label><br>
+        <textarea name="ingredients" required></textarea><br>
+
+        <label>Οδηγίες:</label><br>
+        <textarea name="instructions" required></textarea><br>
+        <input type="submit" value="Καταχώρηση">
+        </form>
+    </nav>
+
+
+    <section class="image-section">
+        <div class="image-text-container center">
+            <a href="recipes.html">
+                <img src="logo.jpg" alt="Category 1 Image">
+            </a>
+            <span>Recipes</span>
+        </div>
+    </section>
+
+
+    <section class="image-section">
+        <div class="image-text-container right">
+            <a href="famous.html">
+                <img src="logo.jpg" alt="Famous Image">
+            </a>
+            <span>Famous</span>
+        </div>
+    </section>
+
+
+    <section class="image-section">
+        <div class="image-text-container left">
+            <a href="healthy.html">
+                <img src="logo.jpg" alt="Healthy Image">
+            </a>
+            <span>Healthy</span>
+        </div>
+    </section>
+
+
+    <section class="image-section">
+        <div class="image-text-container right">
+            <a href="favorite.html">
+                <img src="logo.jpg" alt="Favorite Image">
+            </a>
+            <span>Favorite</span>
+        </div>
+    </section>
+
+
+    <section id="login-form-section" style="display: none;">
+        <h2>Login</h2>
+        <form id="login-form" action="login.php" method="POST">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <br>
+            <button type="submit">Login</button>
+        </form>
+    </section>
+
+    <section id="extra-recipes" style="display: none;">
+        <h2>Extra Recipes</h2>
+        <p>Αυτές οι συνταγές είναι ορατές μόνο σε συνδεδεμένους χρήστες.</p>
+    </section>
+
+    <footer>
+        <p>&copy; Easy Recipes With Us</p>
+    </footer>
+
+    <script src="login_logoutistoselida.js"></script>
+</body>
+</html>
+
+
