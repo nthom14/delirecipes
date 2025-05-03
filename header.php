@@ -14,5 +14,31 @@
             <nav>
                 <a href="index.php">Home</a>
             </nav>
+            <div class="container d-flex justify-content-between align-items-center">
+                <h1 class="h4 mb-0">My Website</h1>
+                <div>
+                    <?php if (!isset($_SESSION['user'])): ?>
+                        <a href="login.php" class="btn btn-outline-primary me-2">Login</a>
+                        <a href="signup.php" class="btn btn-primary">Sign Up</a>
+                    <?php else: ?>
+                        <span class="me-3">Welcome, <?php echo htmlspecialchars($_SESSION['user']); ?></span>
+                        <a href="logout.php" class="btn btn-danger">Logout</a>
+                    <?php endif; ?>
+                </div>
+            </div>
         </header>
+        <!-- <header class="bg-light border-bottom py-2">
+            <div class="container d-flex justify-content-between align-items-center">
+                <h1 class="h4 mb-0">My Website</h1>
+                <div>
+                    <?php if (!isset($_SESSION['user'])): ?>
+                        <a href="login.php" class="btn btn-outline-primary me-2">Login</a>
+                        <a href="signup.php" class="btn btn-primary">Sign Up</a>
+                    <?php else: ?>
+                        <span class="me-3">Welcome, <?php echo htmlspecialchars($_SESSION['user']); ?></span>
+                        <a href="logout.php" class="btn btn-danger">Logout</a>
+                    <?php endif; ?>
+                </div>
+            </div>
+        </header> -->
         <main>
