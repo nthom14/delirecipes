@@ -1,33 +1,30 @@
-<?php
-header('Access-Control-Allow-Origin: *');
-header('Content-Type: application/json');
-session_start();
-include 'db.php';
+<?php include 'header.php'; ?>
 
-$email = $_POST['email'];
-$password = $_POST['password'];
-
-$stmt = $conn->prepare("SELECT id, email, password FROM users WHERE email=?");
-$stmt->bind_param("s", $email);
-$stmt->execute();
-$result = $stmt->get_result();
-
-if ($result->num_rows === 1) {
-    $user = $result->fetch_assoc();
-
-    if (password_verify($password, $user['password'])) {
-        $_SESSION['user_id'] = $user['id'];
-        $_SESSION['email'] = $user['email'];
-        echo "✅ Καλωσήρθες " . $user['email'];
-    } else {
-        echo "❌ Λάθος κωδικός!";
+<div class="container mt-5">
+    <h2>Login</h2>
+    <?php
+    if (isset($_GET['error'])) {
+        $msg = match ($_GET['error']) {
+            'empty' => "Please fill in both fields.",
+            'invalid' => "Invalid username/email or password.",
+            default => "Something went wrong. Please try again."
+        };
+        echo "<div class='alert alert-danger'>$msg</div>";
     }
-} else {
-    echo "❌ Ο χρήστης δεν υπάρχει!";
-}
+    ?>
+    <form method="post" action="login_handler.php" class="needs-validation mt-3" novalidate>
+        <div class="mb-3">
+            <label class="form-label">Username or Email</label>
+            <input type="text" name="username" class="form-control" required>
+            <div class="invalid-feedback">Please enter your username or email.</div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Password</label>
+            <input type="password" name="password" class="form-control" required>
+            <div class="invalid-feedback">Please enter your password.</div>
+        </div>
+        <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+</div>
 
-$stmt->close();
-$conn->close();
-?>
-
-
+<?php include 'footer.php'; ?>
