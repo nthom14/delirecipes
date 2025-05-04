@@ -1,3 +1,18 @@
+<?php
+
+if (!isset($_SESSION['user']) && isset($_COOKIE['remember_token'])) {
+    require 'config.php';
+    $token = $_COOKIE['remember_token'];
+
+    $stmt = $pdo->prepare("SELECT * FROM users WHERE remember_token = ?");
+    $stmt->execute([$token]);
+    $user = $stmt->fetch();
+
+    if ($user) {
+        $_SESSION['user'] = $user['username'];
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
