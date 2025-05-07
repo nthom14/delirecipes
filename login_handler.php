@@ -21,8 +21,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // If "Remember Me" is checked
         if (isset($_POST['remember'])) {
             $token = bin2hex(random_bytes(16)); // 32-character token
-            $expiry = time() + 120; // 2 minutes
-            setcookie("remember_token", $token, $expiry, "/", "", false, true); // 1 days, HTTP-only
+            $expiry = time() + (24 * 60 * 60);  // cookie expiration perion 1 day
+            setcookie("remember_token", $token, $expiry, "/", "", false, true);
 
             // Save token in database (new column needed)
             $stmt = $pdo->prepare("UPDATE users SET remember_token = ? WHERE id = ?");
