@@ -9,7 +9,7 @@ if (!isset($_SESSION['user']) && isset($_COOKIE['remember_token'])) {
     $user = $stmt->fetch();
 
     if ($user) {
-        $_SESSION['user'] = $user['username'];
+        $_SESSION['user']['username'] = $user['username'];
     }
 }
 ?>
@@ -69,7 +69,7 @@ if (!isset($_SESSION['user']) && isset($_COOKIE['remember_token'])) {
                         <a href="login.php" class="btn btn-outline-primary me-2">Login</a>
                         <a href="signup.php" class="btn btn-primary">Sign Up</a>
                     <?php else: ?>
-                        <span class="me-3">Welcome, <?php echo htmlspecialchars($_SESSION['user']); ?></span>
+                        <span class="me-3">Welcome, <?php echo htmlspecialchars($_SESSION['user']['username']); ?></span>
                         <a href="logout.php" class="btn btn-danger">Logout</a>
                     <?php endif; ?>
                 </div>

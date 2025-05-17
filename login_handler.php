@@ -17,7 +17,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $user = $stmt->fetch();
 
     if ($user && password_verify($password, $user['password'])) {
-        $_SESSION['user'] = $user['username'];
+        $session_user = [
+            'id' => $user['id'],
+            'username' => $user['username'],
+            'email' => $user['email']
+        ];
+        // Store in session
+        $_SESSION['user'] = $session_user;
         // If "Remember Me" is checked
         if (isset($_POST['remember'])) {
             $token = bin2hex(random_bytes(16)); // 32-character token
