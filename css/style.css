@@ -53,3 +53,9 @@ footer {
 .btn:hover {
     background-color: #0056b3;
 }
+
+.square-img {
+    object-fit: cover;
+    aspect-ratio: 1 / 1;
+    height: 100%;
+}

@@ -53,9 +53,8 @@ if (!isset($_SESSION['user'])) {
     <p>This is your dashboard.</p>
 </div> -->
 
-<div class="container mt-5">
+<!-- <div class="container mt-5">
     <div class="row g-4">
-        <!-- Section 1 -->
         <div class="col-md-6">
             <a href="recipes.php" class="text-decoration-none">
                 <div class="card h-100 text-center shadow-sm">
@@ -66,8 +65,6 @@ if (!isset($_SESSION['user'])) {
                 </div>
             </a>
         </div>
-
-        <!-- Section 2 -->
         <div class="col-md-6">
             <a href="healthy_recipes.php" class="text-decoration-none">
                 <div class="card h-100 text-center shadow-sm">
@@ -78,8 +75,6 @@ if (!isset($_SESSION['user'])) {
                 </div>
             </a>
         </div>
-
-        <!-- Section 3 -->
         <div class="col-md-6">
             <a href="favorite_recipes.php" class="text-decoration-none">
                 <div class="card h-100 text-center shadow-sm">
@@ -90,8 +85,6 @@ if (!isset($_SESSION['user'])) {
                 </div>
             </a>
         </div>
-
-        <!-- Section 4 -->
         <div class="col-md-6">
             <a href="famous_recipes.php" class="text-decoration-none">
                 <div class="card h-100 text-center shadow-sm">
@@ -103,6 +96,70 @@ if (!isset($_SESSION['user'])) {
             </a>
         </div>
     </div>
+</div> -->
+
+<div class="container py-4">
+    <h2 class="mb-4">Dashboard</h2>
+
+    <div class="row mb-4">
+        <div class="col-md-6 mb-3">
+            <a href="recipes.php" class="text-decoration-none">
+                <div class="card text-center shadow-sm h-100">
+                    <img src="images/my_recipes.jpg" class="card-img-top img-fluid square-img" alt="My Recipes">
+                    <div class="card-body">
+                        <h5 class="card-title">My Recipes</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-md-6 mb-3">
+            <a href="all_recipes.php" class="text-decoration-none">
+                <div class="card text-center shadow-sm h-100">
+                    <img src="images/all_recipes.jpg" class="card-img-top img-fluid square-img" alt="All Recipes">
+                    <div class="card-body">
+                        <h5 class="card-title">All Recipes</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 mb-3">
+            <a href="healthy_recipes.php" class="text-decoration-none">
+                <div class="card text-center shadow-sm h-100">
+                    <img src="images/healthy.jpg" class="card-img-top img-fluid square-img" alt="Healthy Recipes">
+                    <div class="card-body">
+                        <h5 class="card-title">Healthy Recipes</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <a href="favorite_recipes.php" class="text-decoration-none">
+                <div class="card text-center shadow-sm h-100">
+                    <img src="images/favorite.jpg" class="card-img-top img-fluid square-img" alt="Favorite Recipes">
+                    <div class="card-body">
+                        <h5 class="card-title">Favorite Recipes</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <a href="famous_recipes.php" class="text-decoration-none">
+                <div class="card text-center shadow-sm h-100">
+                    <img src="images/famous.jpg" class="card-img-top img-fluid square-img" alt="Famous Recipes">
+                    <div class="card-body">
+                        <h5 class="card-title">Famous Recipes</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
 </div>
+
 
 <?php include 'footer.php'; ?>

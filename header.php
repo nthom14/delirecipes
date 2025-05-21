@@ -51,7 +51,11 @@ if (!isset($_SESSION['user']) && isset($_COOKIE['remember_token'])) {
                         <div class="d-flex gap-2">
                             <?php if (isset($_SESSION['user'])): ?>
                             <!-- <a href="dashboard.php" class="btn btn-outline-primary">Dashboard</a> -->
+                            <span class="text-black me-3">Logged in as <strong><?= htmlspecialchars($_SESSION['user']['username']) ?></strong></span>
                             <a href="logout.php" class="btn btn-outline-danger">Logout</a>
+                            <li class="nav-item">
+                                <a class="nav-link btn btn-outline-secondary ms-2" href="profile.php">My Profile</a>
+                            </li>
                             <?php else: ?>
                             <a href="signup.php" class="btn btn-primary">Sign Up</a>
                             <a href="login.php" class="btn btn-outline-primary">Login</a>

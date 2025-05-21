@@ -28,7 +28,7 @@ $recipes = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <thead>
             <tr>
                 <th>Title</th>
-                <th>Description</th>
+                <!-- <th>Description</th> -->
                 <th>Created At</th>
                 <th>Actions</th>
             </tr>
@@ -37,7 +37,7 @@ $recipes = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <?php foreach ($recipes as $recipe): ?>
                 <tr>
                     <td><?= htmlspecialchars($recipe['title']) ?></td>
-                    <td><?= htmlspecialchars($recipe['description']) ?></td>
+                    <!-- <td><?= htmlspecialchars($recipe['description']) ?></td> -->
                     <td><?= $recipe['created_at'] ?></td>
                     <td>
                         <a href="recipe_edit.php?id=<?= $recipe['id'] ?>" class="btn btn-sm btn-primary">Edit</a>
